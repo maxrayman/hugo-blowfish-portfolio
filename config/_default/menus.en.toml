@@ -16,9 +16,9 @@
   weight = 10
 
 [[main]]
-  identifier = "blog"
   name = "Blog"
-  url = "http://localhost:4000/" # This will be overridden locally
+  pageRef = "blog"
+  #url = "http://localhost:4000/" # This will be overridden locally
   weight = 20
   
 [[main]]

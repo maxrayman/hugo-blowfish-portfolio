@@ -18,10 +18,21 @@ jobs:
           submodules: true  # Required for Blowfish theme
           fetch-depth: 0
 
+      # Build Jekyll Blog
+      - name: Build Jekyll Blog
+        run: |
+          git clone https://github.com/maxrayman/maxrayman-temp.github.io blog-src
+          cd blog-src
+          bundle install
+          bundle exec jekyll build
+          cd ..
+          mkdir -p static/blog
+          cp -r blog-src/_site/* static/blog/
+          
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "latest"
+          hugo-version: "v0.141.0"
           extended: true  # REQUIRED for Blowfish theme (Sass/SCSS support)
 
       - name: Build
