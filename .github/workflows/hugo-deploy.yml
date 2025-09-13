@@ -24,10 +24,7 @@ jobs:
           git clone https://github.com/maxrayman/maxrayman-temp.github.io blog-src
           cd blog-src
           bundle install
-          bundle exec jekyll build
-          cd ..
-          mkdir -p static/blog
-          cp -r blog-src/_site/* static/blog/
+          bundle exec jekyll build -d ../static/blog
           
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
