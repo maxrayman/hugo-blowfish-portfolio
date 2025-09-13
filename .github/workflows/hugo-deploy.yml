@@ -34,7 +34,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "v0.141.0"
+          hugo-version: "0.141.0"
           extended: true  # REQUIRED for Blowfish theme (Sass/SCSS support)
 
       - name: Build
