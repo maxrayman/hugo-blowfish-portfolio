@@ -40,20 +40,10 @@ jobs:
       - name: Build
         run: hugo --minify  # Build with minification
 
-      - name: Deploy to Portfolio Repository
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
         with:
-          # Use a Personal Access Token (PAT) to deploy to ANOTHER repository
-          #personal_token: ${{ secrets.PAT_TOKEN }}  # Must create this secret!
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages  # ← Change to different branch
-
-          # Target your EXISTING maxrayman.github.io repo
-          #external_repository: maxrayman/maxrayman.github.io
-          # Deploy to the MAIN branch (required for user sites)
-          # publish_branch: main
-          # Deploy from the Hugo build output directory
+          publish_branch: gh-pages
           publish_dir: ./public
-          # Optional: Force overwrite the entire branch
-          force_orphan: true
-          commit_message: "Deploy Hugo Portfolio: ${{ github.sha }}"
