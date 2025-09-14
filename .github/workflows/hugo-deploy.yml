@@ -44,9 +44,11 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           # Use a Personal Access Token (PAT) to deploy to ANOTHER repository
-          personal_token: ${{ secrets.PAT_TOKEN }}  # Must create this secret!
+          #personal_token: ${{ secrets.PAT_TOKEN }}  # Must create this secret!
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
           # Target your EXISTING maxrayman.github.io repo
-          external_repository: maxrayman/maxrayman.github.io
+          #external_repository: maxrayman/maxrayman.github.io
           # Deploy to the MAIN branch (required for user sites)
           publish_branch: main
           # Deploy from the Hugo build output directory
