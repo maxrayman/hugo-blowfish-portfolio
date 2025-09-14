@@ -46,11 +46,12 @@ jobs:
           # Use a Personal Access Token (PAT) to deploy to ANOTHER repository
           #personal_token: ${{ secrets.PAT_TOKEN }}  # Must create this secret!
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages  # ← Change to different branch
 
           # Target your EXISTING maxrayman.github.io repo
           #external_repository: maxrayman/maxrayman.github.io
           # Deploy to the MAIN branch (required for user sites)
-          publish_branch: main
+          # publish_branch: main
           # Deploy from the Hugo build output directory
           publish_dir: ./public
           # Optional: Force overwrite the entire branch
