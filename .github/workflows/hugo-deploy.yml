@@ -26,7 +26,7 @@ jobs:
         # Build Jekyll Blog
       - name: Build Jekyll Blog
         run: |
-          git clone https://github.com/maxrayman/maxrayman-temp.github.io blog-src
+          git clone https://github.com/maxrayman/chirpy-blog blog-src
           cd blog-src
           bundle install
           bundle exec jekyll build -d ../static/blog
