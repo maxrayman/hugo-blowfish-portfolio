@@ -42,8 +42,11 @@ jobs:
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        personal_token: ${{ secrets.PAT_TOKEN }}
-        external_repository: maxrayman/maxrayman.github.io
-        publish_branch: main
-        publish_dir: ./public
-        force_orphan: true
+        with:
+          # USE PAT INSTEAD OF GITHUB_TOKEN
+          personal_token: ${{ secrets.PAT_TOKEN }}
+          # TARGET THE EXTERNAL REPOSITORY
+          external_repository: maxrayman/maxrayman.github.io
+          publish_branch: main
+          publish_dir: ./public
+          force_orphan: true
